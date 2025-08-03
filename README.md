@@ -1,73 +1,359 @@
-# Welcome to your Lovable project
+# 🎓 Smart EduPath
 
-## Project info
+> **AI-Powered Education Guidance Platform**
 
-**URL**: https://lovable.dev/projects/e78fa764-82c1-48cd-8dfc-ed682bc3f0a2
+Smart EduPath is an intelligent education guidance platform that leverages AI to provide personalized higher education recommendations. Our platform analyzes user profiles, interests, and career goals to suggest the most suitable educational pathways for achieving their dreams.
 
-## How can I edit this code?
+![GitHub repo size](https://img.shields.io/github/repo-size/saikiran7717/smart-edupath)
+![GitHub last commit](https://img.shields.io/github/last-commit/saikiran7717/smart-edupath)
+![GitHub issues](https://img.shields.io/github/issues/saikiran7717/smart-edupath)
+![GitHub stars](https://img.shields.io/github/stars/saikiran7717/smart-edupath)
 
-There are several ways of editing your application.
+## 🌟 Features
 
-**Use Lovable**
+- **🎯 Personalized Recommendations**: AI-powered analysis of user profiles to suggest ideal education paths
+- **🤖 Google Gemini Integration**: Advanced AI capabilities for intelligent pathway generation
+- **📊 Multi-Step Assessment**: Comprehensive form covering interests, skills, and career goals
+- **💼 Career Alignment**: Recommendations aligned with specific career objectives
+- **📱 Responsive Design**: Modern, mobile-friendly interface built with React and Tailwind CSS
+- **🔒 Secure Backend**: Spring Boot API with proper CORS configuration and security measures
+- **📈 Progress Tracking**: Visual progress indicators throughout the assessment process
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e78fa764-82c1-48cd-8dfc-ed682bc3f0a2) and start prompting.
+## 🏗️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite 5.4
+- **Styling**: Tailwind CSS with custom components
+- **UI Components**: Radix UI components library
+- **State Management**: React Hooks
+- **Development Server**: Runs on port 5173
 
-**Use your preferred IDE**
+### Backend
+- **Framework**: Java Spring Boot
+- **Database**: MySQL with JPA/Hibernate
+- **AI Integration**: Google Gemini 2.0 Flash API
+- **Security**: CORS configuration, rate limiting
+- **API**: RESTful endpoints
+- **Server**: Runs on port 8080
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Development Tools
+- **Package Manager**: npm
+- **Code Quality**: ESLint, TypeScript
+- **Version Control**: Git
+- **IDE Support**: VS Code configuration included
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Quick Start
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Before you begin, ensure you have the following installed:
+- **Node.js** (v18.0.0 or higher) - [Download here](https://nodejs.org/)
+- **Java** (JDK 17 or higher) - [Download here](https://adoptium.net/)
+- **Maven** (3.6+ or use included wrapper)
+- **MySQL** (8.0+) - [Download here](https://dev.mysql.com/downloads/)
+- **Git** - [Download here](https://git-scm.com/)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation & Setup
 
-# Step 3: Install the necessary dependencies.
-npm i
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/saikiran7717/smart-edupath.git
+cd smart-edupath
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+#### 2. Frontend Setup
+```bash
+# Install dependencies
+npm install
+
+# Start development server (runs on http://localhost:5173)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+#### 3. Database Setup
+```sql
+-- Create database
+CREATE DATABASE edupath;
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+-- Create user (optional, or use existing MySQL user)
+CREATE USER 'edupath_user'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON edupath.* TO 'edupath_user'@'localhost';
+FLUSH PRIVILEGES;
+```
 
-**Use GitHub Codespaces**
+#### 4. Backend Configuration
+```bash
+# Navigate to backend directory
+cd backend
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Copy example configuration
+cp src/main/resources/application-example.properties src/main/resources/application.properties
+```
 
-## What technologies are used for this project?
+**Edit `backend/src/main/resources/application.properties`:**
+```properties
+# Replace with your actual values
+gemini.api.key=YOUR_ACTUAL_GEMINI_API_KEY
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+spring.datasource.url=jdbc:mysql://localhost:3306/edupath
+```
 
-This project is built with:
+#### 5. Start Backend Server
+```bash
+# Clean and compile
+mvn clean compile
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Run the application (runs on http://localhost:8080)
+mvn spring-boot:run
+```
 
-## How can I deploy this project?
+## 🔧 Configuration
 
-Simply open [Lovable](https://lovable.dev/projects/e78fa764-82c1-48cd-8dfc-ed682bc3f0a2) and click on Share -> Publish.
+### Environment Variables
 
-## Can I connect a custom domain to my Lovable project?
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `gemini.api.key` | Google Gemini API key | ✅ | - |
+| `spring.datasource.username` | Database username | ✅ | - |
+| `spring.datasource.password` | Database password | ✅ | - |
+| `spring.datasource.url` | Database connection URL | ✅ | `jdbc:mysql://localhost:3306/edupath` |
+| `server.port` | Backend server port | ❌ | `8080` |
 
-Yes, you can!
+### Getting API Keys
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Google Gemini API Key**:
+   - Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - Create a new API key
+   - Copy the key to your configuration
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📡 API Documentation
+
+### Base URL
+- **Development**: `http://localhost:8080`
+- **API Prefix**: `/api`
+
+### Endpoints
+
+#### POST `/api/recommendations`
+Generate personalized education recommendations based on user profile.
+
+**Request Body:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 20,
+  "educationLevel": "high-school",
+  "fieldOfStudy": "Computer Science",
+  "gpa": 8.5,
+  "interests": ["technology", "science", "engineering"],
+  "skills": "Programming, Problem Solving, Mathematics",
+  "dreamJob": "Software Engineer",
+  "jobDescription": "I want to develop innovative software solutions",
+  "timeframe": "3-5"
+}
+```
+
+**Response:**
+```json
+{
+  "recommendations": [
+    {
+      "title": "Computer Science Degree Path",
+      "description": "Traditional CS education with strong foundations",
+      "steps": [
+        "Complete Bachelor's in Computer Science (4 years)",
+        "Build portfolio projects",
+        "Gain internship experience"
+      ],
+      "timeframe": "4-5 years",
+      "institutions": ["MIT", "Stanford", "Carnegie Mellon"]
+    }
+  ],
+  "userProfile": { /* user data */ }
+}
+```
+
+## 🗂️ Project Structure
+
+```
+smart-edupath/
+├── 📁 backend/                    # Spring Boot backend
+│   ├── 📁 src/main/java/
+│   │   └── 📁 com/smartedupath/
+│   │       ├── 📁 config/         # Configuration classes
+│   │       ├── 📁 controller/     # REST controllers
+│   │       ├── 📁 model/          # JPA entities
+│   │       ├── 📁 service/        # Business logic
+│   │       └── 📁 repo/           # Data repositories
+│   ├── 📁 src/main/resources/
+│   │   ├── application.properties # Main configuration
+│   │   └── application-example.properties # Template
+│   └── pom.xml                    # Maven dependencies
+├── 📁 src/                        # React frontend
+│   ├── 📁 components/ui/          # Reusable UI components
+│   ├── 📁 pages/                  # Page components
+│   ├── 📁 scripts/                # JavaScript utilities
+│   ├── 📁 styles/                 # CSS stylesheets
+│   └── 📁 hooks/                  # Custom React hooks
+├── 📁 public/                     # Static assets
+├── package.json                   # Frontend dependencies
+├── vite.config.ts                 # Vite configuration
+├── tailwind.config.ts             # Tailwind CSS config
+└── README.md                      # Project documentation
+```
+
+## 🎨 UI Components
+
+Built with a comprehensive set of modern UI components:
+
+- **Forms**: Multi-step form with validation
+- **Navigation**: Progress tracking and breadcrumbs
+- **Feedback**: Loading states, success/error messages
+- **Layout**: Responsive grid and container systems
+- **Interactive**: Buttons, checkboxes, dropdowns, and more
+
+## 🔒 Security Features
+
+- **Data Protection**: Sensitive information excluded from repository
+- **CORS Configuration**: Proper cross-origin resource sharing setup
+- **Rate Limiting**: API endpoint protection against abuse
+- **Input Validation**: Form data sanitization and validation
+- **Environment Variables**: Secure configuration management
+
+## 🚀 Deployment
+
+### Frontend Deployment
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Backend Deployment
+```bash
+# Create production JAR
+mvn clean package
+
+# Run production JAR
+java -jar target/smart-edupath-0.0.1-SNAPSHOT.jar
+```
+
+## 🧪 Testing
+
+### Frontend Tests
+```bash
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Backend Tests
+```bash
+# Run unit tests
+mvn test
+
+# Run integration tests
+mvn verify
+```
+
+## 📝 Scripts
+
+### Frontend Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+```
+
+### Backend Scripts
+```bash
+mvn clean compile    # Clean and compile
+mvn spring-boot:run  # Run development server
+mvn test            # Run tests
+mvn package         # Build JAR file
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit your changes**: `git commit -m 'Add amazing feature'`
+4. **Push to the branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+### Development Guidelines
+
+- Follow TypeScript/Java coding standards
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting PR
+
+## 📊 Performance
+
+- **Frontend**: Optimized React components with lazy loading
+- **Backend**: Efficient database queries with JPA optimization
+- **AI Integration**: Cached responses for improved performance
+- **Build**: Minified and compressed production builds
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+**Frontend won't start:**
+```bash
+# Clear node modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**Backend connection errors:**
+- Check if MySQL is running
+- Verify database credentials in `application.properties`
+- Ensure port 8080 is not in use
+
+**API key issues:**
+- Verify Gemini API key is valid
+- Check API quota and billing status
+- Ensure proper environment configuration
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **Sai Kiran** - *Initial work* - [@saikiran7717](https://github.com/saikiran7717)
+
+## 🙏 Acknowledgments
+
+- Google Gemini AI for intelligent recommendations
+- Radix UI for beautiful component primitives
+- Tailwind CSS for utility-first styling
+- Spring Boot community for excellent documentation
+- React community for continuous innovation
+
+## 📞 Support
+
+For support and questions:
+
+- **Email**: info@smartedupath.com
+- **GitHub Issues**: [Create an issue](https://github.com/saikiran7717/smart-edupath/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/saikiran7717/smart-edupath/discussions)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ for students seeking their ideal education path</p>
+  <p>⭐ Star this repo if you find it helpful!</p>
+</div>
