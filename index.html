@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart EduPath - Your Future Education Guide</title>
+    <meta name="description" content="Find your ideal higher education path based on your interests, qualifications, and career goals" />
+    <meta name="author" content="Smart EduPath" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h1>Smart<span>EduPath</span></h1>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Discover Your Ideal Education Path</h2>
+          <p>Find personalized higher education recommendations to achieve your dream career. Our AI-powered platform analyzes your profile and suggests the best academic pathways for your goals.</p>
+          <button id="get-started-btn" class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Students planning their education">
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2>How Smart EduPath Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Share Your Profile</h3>
+            <p>Tell us about your current qualifications, interests, and skills</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Define Your Goals</h3>
+            <p>Let us know about your dream job and career aspirations</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Recommendations</h3>
+            <p>Receive personalized education pathways tailored to your goals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form-section" class="form-section">
+      <div class="container">
+        <div class="path-finder-container">
+          <div class="path-finder-header">
+            <h2>Find Your Education Path</h2>
+            <p>Fill in the details below to get personalized recommendations</p>
+          </div>
+
+          <div class="progress-tracker">
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="3">3</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="4">4</div>
+          </div>
+
+          <form id="edupath-form">
+            <!-- Step 1: Basic Information -->
+            <div class="form-step active" id="step-1">
+              <h3>Basic Information</h3>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="15" max="100" required>
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn btn-next">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Current Education -->
+            <div class="form-step" id="step-2">
+              <h3>Current Education</h3>
+              <div class="form-group">
+                <label for="education-level">Current Education Level</label>
+                <select id="education-level" name="educationLevel" required>
+                  <option value="">Select your education level</option>
+                  <option value="high-school">High School</option>
+                  <option value="diploma">Diploma</option>
+                  <option value="associate">Associate Degree</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="phd">PhD</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="field-of-study">Field of Study</label>
+                <input type="text" id="field-of-study" name="fieldOfStudy" placeholder="e.g., Computer Science, Biology, Arts">
+              </div>
+              <div class="form-group">
+                <label for="gpa">GPA (if applicable)</label>
+                <input type="number" id="gpa" name="gpa" min="0" max="10.0" step="0.1" placeholder="0.0 - 10.0">
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn btn-prev">Previous</button>
+                <button type="button" class="btn btn-next">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Interests and Skills -->
+            <div class="form-step" id="step-3">
+              <h3>Interests and Skills</h3>
+              <div class="form-group">
+                <label>Select your areas of interest (select at least 3)</label>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="tech" name="interests" value="technology">
+                    <label for="tech">Technology</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="science" name="interests" value="science">
+                    <label for="science">Science</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="arts" name="interests" value="arts">
+                    <label for="arts">Arts & Humanities</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="business" name="interests" value="business">
+                    <label for="business">Business</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="health" name="interests" value="health">
+                    <label for="health">Healthcare</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="engineering" name="interests" value="engineering">
+                    <label for="engineering">Engineering</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="education" name="interests" value="education">
+                    <label for="education">Education</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="law" name="interests" value="law">
+                    <label for="law">Law</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="skills">List your top skills (comma separated)</label>
+                <textarea id="skills" name="skills" placeholder="e.g., Programming, Writing, Research, Public Speaking"></textarea>
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn btn-prev">Previous</button>
+                <button type="button" class="btn btn-next">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Career Goals -->
+            <div class="form-step" id="step-4">
+              <h3>Career Goals</h3>
+              <div class="form-group">
+                <label for="dream-job">What is your dream job/career?</label>
+                <input type="text" id="dream-job" name="dreamJob" placeholder="e.g., Software Engineer, Doctor, Teacher">
+              </div>
+              <div class="form-group">
+                <label for="job-description">Briefly describe why you're interested in this career</label>
+                <textarea id="job-description" name="jobDescription" placeholder="What attracts you to this career path?"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="timeframe">Preferred timeframe to achieve this goal</label>
+                <select id="timeframe" name="timeframe">
+                  <option value="">Select timeframe</option>
+                  <option value="1-2">1-2 years</option>
+                  <option value="3-5">3-5 years</option>
+                  <option value="5-10">5-10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn btn-prev">Previous</button>
+                <button type="submit" class="btn btn-primary">Get Recommendations</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="results-section" class="results-section hidden">
+      <div class="container">
+        <div class="results-container">
+          <div class="results-header">
+            <h2>Your Personalized Education Path</h2>
+            <p>Based on your profile and goals, here are our recommendations</p>
+          </div>
+          <div class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Analyzing your profile...</p>
+          </div>
+          <div class="results-content">
+            <!-- Results will be populated here by JavaScript -->
+          </div>
+          <div class="results-actions">
+            <button id="new-search" class="btn">Start New Search</button>
+            <button id="download-pdf" class="btn btn-secondary">Download as PDF</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Smart EduPath</h2>
+        <p>Smart EduPath is an AI-powered education guidance platform designed to help students make informed decisions about their higher education journey. Our mission is to connect your current skills and interests with the best educational pathways to achieve your dream career.</p>
+        <p>We leverage advanced artificial intelligence to analyze thousands of successful career paths and provide personalized recommendations that align with your unique profile.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>Smart<span>EduPath</span></h3>
+            <p>Your future education guide</p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: info@smartedupath.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Smart EduPath. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/api.js"></script>
+  </body>
+</html>
