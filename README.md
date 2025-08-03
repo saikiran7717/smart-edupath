@@ -327,10 +327,6 @@ npm install
 - Check API quota and billing status
 - Ensure proper environment configuration
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👥 Authors
 
 - **Sai Kiran** - *Initial work* - [@saikiran7717](https://github.com/saikiran7717)
@@ -342,14 +338,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Tailwind CSS for utility-first styling
 - Spring Boot community for excellent documentation
 - React community for continuous innovation
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: info@smartedupath.com
-- **GitHub Issues**: [Create an issue](https://github.com/saikiran7717/smart-edupath/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/saikiran7717/smart-edupath/discussions)
 
 ---
 
